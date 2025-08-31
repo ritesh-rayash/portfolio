@@ -1,0 +1,1121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth !important;
+}
+
+body{
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* transition: scroll 1s; */
+}
+#scrollto{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgb(255, 63, 95);
+    position: fixed;
+    bottom: 31px;
+    right: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s;
+}
+#scrollto:hover{
+    background: rgb(240, 23, 59);
+}
+#scrollto i{
+    color: white;
+    font-size: 1.3rem;
+}
+::-webkit-scrollbar{
+    background: white;
+    box-shadow: 0px 0px 7px black inset;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(245, 54, 86);
+    border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: rgb(240, 23, 59);
+}
+
+
+.navigation{
+    position: fixed;
+    top: 0;
+    right: -170px;
+    width: 170px;
+    height: 100vh;
+    display: flex;
+    background: rgb(255, 63, 95);
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    z-index: 88;
+}
+
+.navigation.active{
+    right: 0;
+}
+
+.navigation .banner{
+    height: 100vh;
+    width: 50%;
+}
+
+.navigation .navlink{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+.navigation .navlink ul{
+    width: 100%;
+    margin-top: 110px;
+}
+
+.navigation .navlink ul li{
+    list-style: none;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.navigation .navlink ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navigation .navlink ul li a:hover{
+    color: rgb(52, 160, 233);
+}
+
+.sec{
+    width: 100%;
+    position: relative;
+    left: 0;
+    padding: 120px 100px;
+    min-height: 100vh;
+    display: flex;
+    transition: 1s;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+}
+
+.sec header .toggles span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 10%;
+    background: gray;
+    transition: .5s;
+}
+.sec header .logo span:nth-child(1){
+    color: rgb(255, 63, 95);
+    font-size: 2.6rem;
+    font-weight: 800;
+    font-style: italic;
+}
+.sec header .logo span:nth-child(2){
+    font-size: 1.6rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+}
+.sec header ul{
+    display: flex;
+    align-items: center;
+}
+.sec header ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+.sec header ul li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    transition: 0.5s;
+    display: inline-block;
+}
+.sec header ul li a:hover{
+    transform: scale(1.15);
+    color: rgb(255, 63, 95);
+    transition: 0.2s;
+}
+.sec header ul li:nth-child(1) a:hover{
+    transform: scale(1);
+}
+.sec header ul li:nth-child(1) a{
+    color: rgb(255, 63, 95);
+    font-size: 1.2rem;
+}
+.sec header .toggles:hover span{
+    background: white;
+}
+
+.sec .toggles{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .5s;
+    display: none;
+    z-index: 999;
+}
+
+.sec .toggles:hover{
+    background: rgb(255, 63, 95);
+}
+
+.sec .toggles:hover::before{
+    background: white;
+}
+
+.sec .toggles:hover::after{
+    background: white;
+}
+.sec .toggles.active::before{
+    background: white;
+}
+.sec .toggles.active::after{
+    background: white;
+}
+.sec .toggles::before{
+    content: "";
+    position: absolute;
+    top: 20%;
+    width: 80%;
+    height: 10%;
+    background: gray;
+    transition: .5s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sec .toggles::after{
+    content: "";
+    position: absolute;
+    bottom: 20%;
+    width: 80%;
+    height: 10%;
+    background: gray;
+    transition: .5s;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sec .toggles.active::before{
+    top: 50%;
+    transform: rotate(45deg);
+    left: 0;
+}
+
+.sec .toggles.active::after{
+    top: 50%;
+    transform: rotate(-45deg);
+    left: 0;
+}
+
+.sec .toggles.active span{
+    display: none;
+}
+
+.sec .btn{
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background: rgb(255, 63, 95);
+    color: white;
+    font-weight: 500;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.sec .btn:hover{
+    background: rgb(240, 23, 59);
+}
+
+.sec .imgbox{
+    display: inline-block;
+    margin: auto 30px auto 0;
+    height: 250px;
+    width: 250px;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.sec .imgbox img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.sec .content{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sec .content h2 span{
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.sec .content h2{
+    color: rgb(52, 160, 233);
+    width: 100%;
+}
+
+.sec .content h2 span:nth-child(3){
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.sec .content a{
+    background: rgb(255, 63, 95);
+    text-decoration: none;
+    padding: 6px 10px;
+    color: white;    
+    margin: 20px auto 20px 0;
+    display: inline-block;
+    border-radius: 3px;
+    font-weight: 500;
+    width: fit-content;
+}
+
+.sec .content a:hover{
+    background-color: rgb(240, 23, 59);
+}
+
+.about_me{
+    width: 100%;
+    position: relative;
+    padding: 40px;
+}
+
+.about_me .about_flex{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 570px;
+}
+
+.about_me .about_flex .about_img{
+    height: 520px;
+    width: 400px;
+}
+
+.about_me .about_flex .about_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.about_me .about_flex .about_content{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    position: sticky;
+    bottom: 100%;
+    margin-left: 25px;
+}
+
+.about_me .about_flex .about_content>h1{
+    font-size: 2.4rem;
+    text-align: center;
+}
+
+.about_me .about_flex .about_content>p{
+    margin-bottom: 30px;
+    text-align: justify;
+}
+
+.showSkills,.showExperience,.showEducation{
+    display: none;
+}
+.about_me .about_flex .about_content .allh4{
+    margin-bottom: 25px;
+}
+.about_me .about_flex .about_content h4{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.about_me .about_flex .about_content h4::before{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 0;
+    top: 100%;
+    left: 50%;
+    background: currentColor;
+    transform: translateX(-50%);
+    transition: 0.5s;
+}
+.about_me .about_flex .about_content h4.active{
+    color: rgb(255, 63, 95);
+}
+.about_me .about_flex .about_content h4.active::before{
+    width: 120%;
+}
+.about_me .about_flex .about_content h4:hover{
+    color: rgb(255, 63, 95);
+}
+
+.about_me .about_flex .about_content div:nth-child(4){
+    margin-top: auto;
+}
+.about_me .about_flex .about_content div:nth-child(4) h5{
+    color: rgb(52, 160, 233);
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.about_me .about_flex .about_content div:nth-child(5){
+    margin-top: auto;
+}
+.about_me .about_flex .about_content div:nth-child(5) h5{
+    color: rgb(52, 160, 233);
+    font-size: 1rem;
+    margin: 5px 0;
+}
+.about_me .about_flex .about_content div:nth-child(6){
+    margin-top: auto;
+}
+.about_me .about_flex .about_content div:nth-child(6) h5{
+    color: rgb(52, 160, 233);
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.about_me .about_flex .about_content .allh4{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.about_me .about_flex .about_content .allh4 h4.showSkills{
+    color: rgb(255, 63, 95);
+}
+
+section.services{
+    width: 100%;
+    padding: 40px;
+}
+section.services h1{
+    text-align: center;
+}
+section.services > h1{
+    text-align: center;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+section.services div.services{
+    display: flex;
+    justify-content: space-between;
+}
+section.services div.services .service{
+    background: #ebebeb;
+    margin: 20px;
+    padding: 15px;
+}
+section.services div.services .service>a{
+    width: fit-content;
+    text-decoration: none;
+    background: rgb(255, 63, 95);
+    display: block;
+    margin-right: auto;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+section.services div.services .service>a:hover{
+    background: rgb(240, 23, 59);
+}
+section.services div.services .service h3{
+    font-size: 3rem;
+    text-align: center;
+}
+section.services div.services .service h3 span{
+    margin: 0 15px;
+    position: relative;
+    z-index: 10;
+    transition: 0.5s;
+    display: inline-block;
+    line-height: 0px;
+}
+
+section.services div.services .service a{
+    display: block;
+}
+
+section.services div.services .service.html h3 span:nth-child(1)::before{
+    content: '';
+    width: 75%;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.5s;
+}
+section.services div.services .service.html h3 span:nth-child(2)::before{
+    content: '';
+    width: 75%;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.5s;
+}
+section.services div.services .service.html h3 span:nth-child(3)::before{
+    content: '';
+    width: 75%;
+    height: 60%;
+    background: transparent;
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    z-index: -1;
+    transition: all 0.5s;
+}
+section.services div.services .service.php h3 span:nth-child(1)::before{
+    content: '';
+    width: 74%;
+    height: 60%;
+    border-radius: 30%;
+    background: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: -1;
+    transition: all 0.5s;
+}
+section.services div.services .service h3 span:hover::before{
+    background: white;
+}
+section.services div.services .service.php h3 span:hover::before{
+    background: white;
+}
+section.services div.services .service.sql h3 span:nth-child(1):hover i{
+    color: rgb(233, 53, 53);
+}
+section.services div.services .service.sql h3 span:nth-child(2):hover i{
+    color: rgb(25, 150, 240);
+}
+section.services div.services .service h3 span:nth-child(3):hover::before{
+    background: black;
+}
+section.services div.services .service h3 span:hover{
+    transform: scale(1.2);
+}
+section.services div.services .service h3 span i{
+    transition: all 0.5s;
+}
+section.services div.services .service.html h3 span:nth-child(1):hover i{
+    color: rgb(250, 136, 13);
+    transition: all 0.5s;
+}
+section.services div.services .service.html h3 span:nth-child(2):hover i{
+    color: rgb(13, 175, 250);
+    transition: all 0.5s;
+}
+section.services div.services .service.html h3 span:nth-child(3):hover i{
+    color: yellow;
+    transition: all 0.5s;
+}
+section.services div.services .service.php h3 span:nth-child(1):hover i{
+    color: rgb(54, 38, 172);
+    transition: all 0.5s;
+}
+
+section.mywork{
+    width: 100%;
+    padding: 40px;
+}
+section.mywork div.mywork{
+    display: flex;
+    justify-content: space-around;
+}
+section.mywork h1{
+    font-size: 2.4rem;
+    text-align: center;
+}
+section.mywork >a{
+    display: block;
+    margin: auto;
+    padding: 7px 13px;
+    color: white;
+    background: rgb(255, 63, 95);
+    width: fit-content;
+    border-radius: 4px;
+    text-decoration: none;
+}
+section.mywork >a:hover{
+    background: rgb(240, 23, 59);
+}
+section.mywork div.mywork .work{
+    position: relative;
+    height: 450px;
+    width: 314px;
+    margin: 40px;
+    overflow: hidden;
+}
+section.mywork div.mywork .work img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+section.mywork div.mywork .work .hover{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transform: rotateX(90deg);
+    transform-origin: bottom;
+    background: linear-gradient(to top,rgb(255, 63, 95),transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 1s;
+}
+section.mywork div.mywork .work:hover .hover{
+    transform: rotateX(0deg);
+    transition: 1s;
+}
+section.mywork div.mywork .work:hover img{
+    transform: scale(1.3);
+    transition: 1s;
+}
+section.mywork div.mywork .work .hover h4{
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+}
+section.mywork div.mywork .work .hover p{
+    text-align: center;
+    margin-bottom: 15px;
+}
+section.mywork div.mywork .work .hover a{
+    display: block;
+    margin: 0 auto;
+    color: white;
+    text-decoration: none;
+    background: rgb(255, 29, 95);
+    padding: 3px 10px;
+    border-radius: 4px;
+}
+
+.contact{
+    width: 100%;
+    padding: 40px 40px 0 40px;
+    margin-top: 15px;
+}
+.contact>p{
+    padding: 15px;
+    background: lightgray;
+    margin: 0 -40px;
+    text-align: center;
+}
+.contact>p i{
+    color: rgb(255, 63, 95);
+}
+.contact .contact_flex{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.contact .contact_flex .icons h1{
+    font-size: 2.4rem;
+    text-align: center;
+}
+.contact .contact_flex .icons p{
+    margin: 20px 0;
+}
+.contact .contact_flex .icons >a{
+    display: block;
+    margin: auto;
+    padding: 10px;
+    background: rgb(255, 63, 95);
+    color: white;
+    width: fit-content;
+    text-decoration: none;
+}
+.contact .contact_flex .icons > a{
+    display: block;
+    margin: 30px auto 0 auto;
+    padding: 10px;
+    background: rgb(255, 63, 95);
+    color: white;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.contact .contact_flex .icons > a:hover{
+    background: rgb(240, 23, 59);
+}
+.contact .contact_flex .icons p i{
+    color: rgb(255, 63, 95);
+    margin: 10px;
+    font-size: 1.3rem;
+}
+.contact .contact_flex .icons ul{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+}
+.contact .contact_flex .icons p:last-child{
+    margin-top: 50px !important;
+    text-align: center;
+    margin: 0;
+}
+.contact .contact_flex .icons p:last-child i{
+    color: rgb(255, 63, 95);
+}
+.contact .contact_flex .icons ul li{
+    height: 30px;
+    width: 30px;
+    list-style: none;
+    transition: 1s;
+}
+.contact .contact_flex .icons ul li:hover{
+    scale: 1.3;
+    transition: 1s;
+}
+.contact .contact_flex .icons ul li a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+.contact .contact_flex .icons ul li a img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .contact_flex form{
+    width: 55%;
+}
+.contact .contact_flex form input{
+    height: 40px;
+    margin: 20px 0;
+}
+.contact .contact_flex form input:last-child{
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0 auto;
+    padding: 0px 10px;
+    box-sizing: unset;
+    font-size: 15px;
+    border-radius: 5px;
+    border: none;
+    background: rgb(255, 63, 95);
+    color: white;
+}
+.contact .contact_flex form input:last-child:hover{
+    background: rgb(240, 23, 59);
+}
+.contact .contact_flex form textarea{
+    padding-top: 10px;
+}
+.contact .contact_flex form input,textarea{
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+footer{
+    width: 50%;
+}
+
+footer ul li{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    margin: 0 5px;
+}
+
+footer ul li a{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease-in;
+}
+
+footer ul li a:hover{
+    transform: scale(1.2);
+}
+
+footer ul li a img{
+    height: 100%;
+    width: 100%;
+}
+
+footer>p{
+    font-size: .8rem;
+}
+
+/*--------responsiveness-----------*/
+
+@media(max-width:1265px){
+    .mywork .work{
+        height: 400px;
+        width: 300px;
+    }
+}
+
+@media(max-width:1254px){
+    section.mywork div.mywork .work{
+        margin: 15px;
+    }
+}
+
+@media(max-width:1134px){
+    .sec{
+        padding: 120px 50px;
+    }
+}
+
+@media(max-width:1075px){
+    section.mywork div.mywork .work{
+        height: 400px;
+        width: 317px;
+    }
+}
+
+@media(max-width:1089px){
+    section.mywork{
+        padding: 40px 0;
+    }
+}
+
+@media(max-width:1019px){
+    .mywork .work{
+        height: 350px;
+        width: 233px;
+    }
+    .sec {
+        padding: 120px 10px;
+    }
+    .about_flex{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .about_me .about_flex .about_content{
+        width: 90%;
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+    .about_me .about_flex .about_img{
+        height: 400px;
+        width: 90%;
+    }
+    .about_me .about_flex .about_content>h1{
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .sec .content h2 span:nth-child(3){
+        display: block;
+        margin-left: 0;
+    }
+    section.services div.services{
+        width: 100%;
+    }
+    section.services{
+        padding: 40px 0;
+    }
+    .about_me .about_flex{
+        height: auto;
+    }
+}
+
+@media(max-width:984px){
+    .sec .content h2 span{
+        font-size: 2.2rem;
+    }
+    section.services{
+        padding: 40px 0;
+    }
+    .sec .content{
+        width: 55%;
+    }
+}
+
+@media(max-width:949px){
+    .sec .contact{
+        width: 60%;
+        justify-content: center;
+    }
+    .sec header ul{
+        display: none;
+    }
+    .sec .toggles{
+        display: inline-block;
+    }
+    .sec header{
+        flex-direction: row-reverse;
+    }
+}
+
+@media(max-width:800px){
+    section.mywork div.mywork{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.mywork div.mywork .work{
+        height: 453px;
+        width: 84%;
+    }
+    section.services div.services{
+        width: 90%;
+    }
+    section.services div.services .service{
+        margin: 20px;
+    }
+}
+
+
+@media(max-width:880px){
+    section.services div.services {
+        flex-direction: column;
+        margin: auto;
+    }
+    .about_me {
+        padding: 40px 0;
+    }
+    section.mywork div.mywork{
+        flex-direction: column;
+        align-items: center;
+    }
+    section.mywork div.mywork .work{
+        height: 350px;
+        width: 90%;
+    }
+    section.services div.services .service{
+        margin: 20px 44px;
+    }
+
+ }
+
+ @media(max-width:760px){
+    .contact .contact_flex{
+        flex-direction: column;
+    }
+    .contact .contact_flex .icons ul {
+        margin: auto;
+        width: 50%;
+        justify-content: space-evenly;
+    }
+    .contact .contact_flex .icons p{
+        text-align: center;
+        margin: 16px 0;
+    }
+    .contact .contact_flex form{
+        margin: auto;
+        width: 80%;
+    }
+ }
+
+ @media(max-width:660px){
+    .sec{
+     flex-direction: column;
+     align-items: center;
+    }
+    .sec .content{
+     width: 90%;
+     margin-top: 30px;
+    }
+    .contact .contact_flex form{
+     width: 90%;
+    }
+ }
+
+ @media(max-width:500px){
+    .about_me .about_flex .about_content .allh4{
+        justify-content: space-between;
+    }
+    .contact .contact_flex .icons ul{
+        width: 75%;
+    }
+    #scrollto{
+        width: 40px;
+        height: 40px;
+    }
+ }
+
+ @media(max-width:475px){
+    .sec .content{
+        width: 90%;
+    }
+    .about_me .about_flex .about_content .allh4{
+        justify-content: space-between;
+    }
+    .sec header{
+        padding: 20px 30px;
+    }
+    .about_me .about_flex .about_content h4{
+        font-size: 1.1rem;
+    }
+    section.services div.services{
+        width: 100%;
+    }
+    .navigation{
+        width: 108px;
+    }
+    .navigation .navlink ul li a{
+        font-size: 0.8rem;
+    }
+ }
+
+ @media(max-width:400px){
+    .sec{
+        padding: 120px 20px;
+    }
+    .contact{
+        padding: 0;
+    }
+    .contact>p {
+        margin: 0;
+    }
+    .contact .contact_flex form input, textarea{
+        font-size: 12px;
+        padding: auto 5px;
+    }
+    .contact .contact_flex form textarea{
+        height: 70px;
+    }
+ }
+
+ @media(max-width:351px){
+    .navigation{
+        width: 97px;
+    }
+    .navigation .navlink ul li a{
+        font-size: 0.7rem;
+    }
+    .contact .contact_flex form textarea{
+        height: 100px;
+    }
+    .sec .content {
+        margin: 20px auto 20px -40px;
+    }
+    body{
+        font-size: 12px;
+    }
+    section.services div.services .service{
+        margin: 20px 10px;
+    }
+    .sec .content h2 span{
+        font-size: 1.5rem;
+    }
+    .sec .content h2 span:nth-child(3){
+        font-size: 13px;
+    }
+    .about_me .about_flex .about_content .allh4 h4 {
+        font-size: 13px;
+    }
+    .about_me .about_flex .about_content div:nth-child(5) h5{
+        font-size: 12px;
+    }
+    .about_me .about_flex .about_content div:nth-child(6) h5 {
+        font-size: 12px;
+    }
+    .about_me .about_flex .about_content div:nth-child(4) h5{
+        font-size: 12px;
+    }
+    .about_me .about_flex .about_content>h1 {
+        font-size: 1.5rem;
+    }
+    section.services > h1{
+        font-size: 1.5rem;
+    }
+    section.mywork h1{
+        font-size: 1.5rem;
+    }
+    .contact .contact_flex .icons h1{
+        font-size: 1.5rem;
+    }
+    .sec header .logo span:nth-child(1){
+        font-size: 25px;
+    }
+    .sec header .logo span:nth-child(2){
+        font-size: 18px;
+    }
+    .sec .toggles{
+        height: 31px;
+        width: 30px;
+    }
+    .about_me .about_flex .about_img{
+        height: 220px;
+    }
+    .sec {
+        padding: 120px 0 0 0;
+    }
+    .sec .content {
+        width: 80%;
+        margin: 30px 0;
+    }
+ }
+
+ @media(max-width:230px){
+    .sec .content h2 span:nth-child(3){
+        font-size: 11px;
+    }
+    .sec .content h2 span{
+        font-size: 21px;
+    }
+    .sec .content h2 {
+        font-size: 12px;
+    }
+    .sec header{
+        padding: 20px 15px;
+    }
+    .navigation.active{
+        width: 100vw;
+    }
+    .navigation{
+        right: -100%;
+    }
+    .navigation .navlink ul li a{
+        font-size: 0.9rem;
+    }
+ }
+
+ @media(max-width:300px){
+    .sec .imgbox{
+        height: 200px;
+        width: 200px;
+    }
+ }
