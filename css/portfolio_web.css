@@ -261,8 +261,8 @@ header{
 .sec .imgbox{
     display: inline-block;
     margin: auto 30px auto 0;
-    height: 250px;
-    width: 250px;
+    height: 500px;
+    width: 500px;
     position: relative;
     border-radius: 50%;
     overflow: hidden;
