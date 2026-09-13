@@ -196,8 +196,8 @@ details[open] summary > span { transform: rotate(45deg); }
 .contact-label { display: block; font: 9px monospace; letter-spacing: 1px; margin-bottom: 8px; color: #3a482b; }
 .contact-aside a { font-size: clamp(16px, 1.8vw, 23px); letter-spacing: -.5px; border-bottom: 1px solid #748a4b; padding-bottom: 5px; overflow-wrap: anywhere; }
 .contact-section a:focus-visible { outline-color: var(--bg); }
-.whatsapp-float { position: fixed; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); z-index: 15; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid #ffffff40; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 8px 28px #0006; transition: transform .2s, background .2s, box-shadow .2s; }
-.whatsapp-float svg { width: 32px; height: 32px; }
+.whatsapp-float { position: fixed; right: 24px; bottom: 24px; right: calc(24px + env(safe-area-inset-right, 0px)); bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 15; display: grid; place-items: center; width: 60px; height: 60px; border: 1px solid #ffffff40; border-radius: 50%; background: #25d366; color: #fff; box-shadow: 0 8px 28px #0006; line-height: 0; touch-action: manipulation; transition: transform .2s, background .2s, box-shadow .2s; }
+.whatsapp-float svg { display: block; width: 32px; height: 32px; flex: none; overflow: visible; }
 .whatsapp-float:hover { transform: translateY(-3px) scale(1.04); background: #20bd5a; box-shadow: 0 12px 32px #0008; }
 .whatsapp-float:focus-visible { outline-color: #fff; outline-offset: 4px; }
 .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-block: 36px; }
@@ -279,7 +279,7 @@ details[open] summary > span { transform: rotate(45deg); }
     .header-inner { flex-wrap: wrap; padding-block: 16px 10px; }
     .header-inner nav { width: 100%; justify-content: space-between; }
     html { scroll-padding-top: 135px; }
-    .whatsapp-float { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: 54px; height: 54px; }
+    .whatsapp-float { right: 16px; bottom: 16px; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); width: 54px; height: 54px; }
     .whatsapp-float svg { width: 29px; height: 29px; }
 }
 @media (max-width: 380px) {
